@@ -1,0 +1,166 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "autoname": "format:TRANS-{YYYY}-{#####}",
+    "creation": "2025-11-28 14:00:00.000000",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "transmittal_details_section",
+        "recipient",
+        "organization",
+        "transmittal_date",
+        "status",
+        "column_break_1",
+        "reason_for_issue",
+        "delivery_method",
+        "acknowledgement_required",
+        "date_acknowledged",
+        "items_section",
+        "transmittal_items",
+        "message_section",
+        "message"
+    ],
+    "fields": [
+        {
+            "fieldname": "transmittal_details_section",
+            "fieldtype": "Section Break",
+            "label": "Transmittal Details"
+        },
+        {
+            "fieldname": "recipient",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "in_standard_filter": 1,
+            "label": "Recipient",
+            "options": "User",
+            "reqd": 1
+        },
+        {
+            "fieldname": "organization",
+            "fieldtype": "Link",
+            "label": "Organization",
+            "options": "Company"
+        },
+        {
+            "default": "Today",
+            "fieldname": "transmittal_date",
+            "fieldtype": "Date",
+            "in_list_view": 1,
+            "label": "Transmittal Date",
+            "reqd": 1
+        },
+        {
+            "default": "Draft",
+            "fieldname": "status",
+            "fieldtype": "Select",
+            "in_list_view": 1,
+            "in_standard_filter": 1,
+            "label": "Status",
+            "options": "Draft\nIssued\nReceived\nAcknowledged\nCancelled",
+            "reqd": 1
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "reason_for_issue",
+            "fieldtype": "Select",
+            "label": "Reason for Issue",
+            "options": "For Approval\nFor Review\nFor Information\nFor Action\nFor Construction\nAs Requested",
+            "reqd": 1
+        },
+        {
+            "default": "Email",
+            "fieldname": "delivery_method",
+            "fieldtype": "Select",
+            "label": "Delivery Method",
+            "options": "Email\nCourier\nHand Delivery\nPortal"
+        },
+        {
+            "default": "0",
+            "fieldname": "acknowledgement_required",
+            "fieldtype": "Check",
+            "label": "Acknowledgement Required"
+        },
+        {
+            "fieldname": "date_acknowledged",
+            "fieldtype": "Datetime",
+            "label": "Date Acknowledged",
+            "read_only": 1
+        },
+        {
+            "fieldname": "items_section",
+            "fieldtype": "Section Break",
+            "label": "Transmitted Documents"
+        },
+        {
+            "fieldname": "transmittal_items",
+            "fieldtype": "Table",
+            "label": "Items",
+            "options": "Transmittal Item"
+        },
+        {
+            "fieldname": "message_section",
+            "fieldtype": "Section Break",
+            "label": "Message / Remarks"
+        },
+        {
+            "fieldname": "message",
+            "fieldtype": "Text Editor",
+            "label": "Message"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "is_submittable": 1,
+    "links": [],
+    "modified": "2025-11-28 14:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Correspondence",
+    "name": "Document Transmittal",
+    "naming_rule": "Expression",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "submit": 1,
+            "write": 1
+        },
+        {
+            "create": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "Correspondence Manager",
+            "share": 1,
+            "submit": 1,
+            "write": 1
+        },
+        {
+            "create": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "Correspondence User",
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": [],
+    "title_field": "recipient",
+    "track_changes": 1
+}

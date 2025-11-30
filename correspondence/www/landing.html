@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERPNext - Modern Business Management System</title>
+    <meta name="description" content="Powerful, modern ERP system for managing your business operations efficiently">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cairo:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="/assets/correspondence/css/style.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="40" height="40" rx="8" fill="url(#logo-gradient)" />
+                        <path d="M12 20L18 26L28 14" stroke="white" stroke-width="3" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <defs>
+                            <linearGradient id="logo-gradient" x1="0" y1="0" x2="40" y2="40">
+                                <stop offset="0%" stop-color="#667eea" />
+                                <stop offset="100%" stop-color="#764ba2" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <span class="logo-text" data-en="ERPNext" data-ar="إي آر بي نكست">ERPNext</span>
+                </div>
+
+                <div class="nav-links">
+                    <a href="#features" class="nav-link" data-en="Features" data-ar="المميزات">Features</a>
+                    <a href="#modules" class="nav-link" data-en="Modules" data-ar="الوحدات">Modules</a>
+                    <a href="#about" class="nav-link" data-en="About" data-ar="عن النظام">About</a>
+                    <a href="#contact" class="nav-link" data-en="Contact" data-ar="اتصل بنا">Contact</a>
+                </div>
+
+                <div class="nav-actions">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                        <svg class="sun-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="2" />
+                            <path
+                                d="M10 2V4M10 16V18M18 10H16M4 10H2M15.657 4.343L14.243 5.757M5.757 14.243L4.343 15.657M15.657 15.657L14.243 14.243M5.757 5.757L4.343 4.343"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                        <svg class="moon-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path
+                                d="M17 10.5C16.5 14.5 13 17.5 9 17.5C5 17.5 2 14.5 2 10.5C2 6.5 5 3.5 9 3.5C9.5 3.5 10 3.5 10.5 3.5C9 5 8.5 7 9 9C9.5 11 11 12.5 13 13C14.5 13.5 16 13 17 12V10.5Z"
+                                fill="currentColor" />
+                        </svg>
+                    </button>
+
+                    <button class="lang-toggle" id="langToggle">
+                        <span class="lang-text">العربية</span>
+                    </button>
+
+                    <a href="/login" class="btn btn-primary" data-en="Login" data-ar="تسجيل الدخول">Login</a>
+                </div>
+
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
+
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title" data-en="Transform Your Business with Modern ERP"
+                    data-ar="حوّل عملك مع نظام تخطيط موارد المؤسسات الحديث">
+                    Transform Your Business with Modern ERP
+                </h1>
+                <p class="hero-subtitle"
+                    data-en="Streamline operations, boost productivity, and grow your business with our powerful, integrated ERP solution"
+                    data-ar="بسّط العمليات، عزز الإنتاجية، وطوّر عملك مع حل تخطيط موارد المؤسسات المتكامل والقوي">
+                    Streamline operations, boost productivity, and grow your business with our powerful, integrated ERP
+                    solution
+                </p>
+
+                <div class="hero-actions">
+                    <a href="/login" class="btn btn-hero-primary" data-en="Get Started" data-ar="ابدأ الآن">Get
+                        Started</a>
+                    <a href="#features" class="btn btn-hero-secondary" data-en="Learn More" data-ar="اعرف المزيد">Learn
+                        More</a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">99.9%</div>
+                        <div class="stat-label" data-en="Uptime" data-ar="وقت التشغيل">Uptime</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label" data-en="Modules" data-ar="وحدة">Modules</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label" data-en="Support" data-ar="الدعم">Support</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-en="Powerful Features" data-ar="مميزات قوية">Powerful Features</h2>
+                <p class="section-subtitle" data-en="Everything you need to run your business efficiently"
+                    data-ar="كل ما تحتاجه لإدارة عملك بكفاءة">
+                    Everything you need to run your business efficiently
+                </p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <rect x="4" y="4" width="24" height="24" rx="4" stroke="currentColor" stroke-width="2" />
+                            <path d="M12 16L14.5 18.5L20 13" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title" data-en="Inventory Management" data-ar="إدارة المخزون">Inventory
+                        Management</h3>
+                    <p class="feature-description"
+                        data-en="Track stock levels, manage warehouses, and optimize inventory across multiple locations"
+                        data-ar="تتبع مستويات المخزون، إدارة المستودعات، وتحسين المخزون عبر مواقع متعددة">
+                        Track stock levels, manage warehouses, and optimize inventory across multiple locations
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <circle cx="16" cy="12" r="4" stroke="currentColor" stroke-width="2" />
+                            <path d="M8 26C8 22 11 20 16 20C21 20 24 22 24 26" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title" data-en="HR & Payroll" data-ar="الموارد البشرية والرواتب">HR & Payroll
+                    </h3>
+                    <p class="feature-description"
+                        data-en="Manage employees, attendance, leave, and automate payroll processing seamlessly"
+                        data-ar="إدارة الموظفين، الحضور، الإجازات، وأتمتة معالجة الرواتب بسلاسة">
+                        Manage employees, attendance, leave, and automate payroll processing seamlessly
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <path d="M4 16L8 12L12 18L16 10L20 16L24 8L28 14" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M4 24H28" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title" data-en="Financial Accounting" data-ar="المحاسبة المالية">Financial
+                        Accounting</h3>
+                    <p class="feature-description"
+                        data-en="Complete accounting suite with invoicing, payments, and comprehensive financial reports"
+                        data-ar="مجموعة محاسبية كاملة مع الفواتير، المدفوعات، والتقارير المالية الشاملة">
+                        Complete accounting suite with invoicing, payments, and comprehensive financial reports
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <rect x="6" y="8" width="20" height="16" rx="2" stroke="currentColor" stroke-width="2" />
+                            <path d="M6 12H26M12 16H20M14 20H18" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title" data-en="CRM & Sales" data-ar="إدارة علاقات العملاء والمبيعات">CRM & Sales
+                    </h3>
+                    <p class="feature-description"
+                        data-en="Manage leads, opportunities, and customer relationships to drive sales growth"
+                        data-ar="إدارة العملاء المحتملين، الفرص، وعلاقات العملاء لتعزيز نمو المبيعات">
+                        Manage leads, opportunities, and customer relationships to drive sales growth
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <path d="M16 4V16L22 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <circle cx="16" cy="16" r="10" stroke="currentColor" stroke-width="2" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title" data-en="Project Management" data-ar="إدارة المشاريع">Project Management
+                    </h3>
+                    <p class="feature-description"
+                        data-en="Plan, track, and deliver projects on time with powerful project management tools"
+                        data-ar="خطط، تابع، وسلّم المشاريع في الوقت المحدد مع أدوات إدارة مشاريع قوية">
+                        Plan, track, and deliver projects on time with powerful project management tools
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <rect x="4" y="8" width="10" height="16" rx="2" stroke="currentColor" stroke-width="2" />
+                            <rect x="18" y="8" width="10" height="16" rx="2" stroke="currentColor" stroke-width="2" />
+                            <path d="M8 12H10M8 16H10M22 12H24M22 16H24" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title" data-en="Manufacturing" data-ar="التصنيع">Manufacturing</h3>
+                    <p class="feature-description"
+                        data-en="Manage production planning, work orders, and bill of materials efficiently"
+                        data-ar="إدارة تخطيط الإنتاج، أوامر العمل، وقائمة المواد بكفاءة">
+                        Manage production planning, work orders, and bill of materials efficiently
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modules Section -->
+    <section id="modules" class="modules">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-en="Integrated Modules" data-ar="وحدات متكاملة">Integrated Modules</h2>
+                <p class="section-subtitle" data-en="All your business needs in one platform"
+                    data-ar="جميع احتياجات عملك في منصة واحدة">
+                    All your business needs in one platform
+                </p>
+            </div>
+
+            <div class="modules-grid">
+                <div class="module-card">
+                    <div class="module-header">
+                        <div class="module-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                            📊</div>
+                        <h3 data-en="Accounting" data-ar="المحاسبة">Accounting</h3>
+                    </div>
+                    <ul class="module-features">
+                        <li data-en="General Ledger" data-ar="دفتر الأستاذ العام">General Ledger</li>
+                        <li data-en="Accounts Payable/Receivable" data-ar="الحسابات الدائنة/المدينة">Accounts
+                            Payable/Receivable</li>
+                        <li data-en="Tax Management" data-ar="إدارة الضرائب">Tax Management</li>
+                        <li data-en="Financial Reports" data-ar="التقارير المالية">Financial Reports</li>
+                    </ul>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-header">
+                        <div class="module-icon" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                            📦</div>
+                        <h3 data-en="Stock" data-ar="المخزون">Stock</h3>
+                    </div>
+                    <ul class="module-features">
+                        <li data-en="Warehouse Management" data-ar="إدارة المستودعات">Warehouse Management</li>
+                        <li data-en="Stock Transfers" data-ar="نقل المخزون">Stock Transfers</li>
+                        <li data-en="Batch & Serial Numbers" data-ar="أرقام الدفعات والتسلسل">Batch & Serial Numbers
+                        </li>
+                        <li data-en="Stock Reports" data-ar="تقارير المخزون">Stock Reports</li>
+                    </ul>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-header">
+                        <div class="module-icon" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                            🛒</div>
+                        <h3 data-en="Buying" data-ar="المشتريات">Buying</h3>
+                    </div>
+                    <ul class="module-features">
+                        <li data-en="Purchase Orders" data-ar="أوامر الشراء">Purchase Orders</li>
+                        <li data-en="Supplier Management" data-ar="إدارة الموردين">Supplier Management</li>
+                        <li data-en="Material Requests" data-ar="طلبات المواد">Material Requests</li>
+                        <li data-en="Purchase Analytics" data-ar="تحليلات المشتريات">Purchase Analytics</li>
+                    </ul>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-header">
+                        <div class="module-icon" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                            💰</div>
+                        <h3 data-en="Selling" data-ar="المبيعات">Selling</h3>
+                    </div>
+                    <ul class="module-features">
+                        <li data-en="Sales Orders" data-ar="أوامر المبيعات">Sales Orders</li>
+                        <li data-en="Quotations" data-ar="عروض الأسعار">Quotations</li>
+                        <li data-en="Customer Portal" data-ar="بوابة العملاء">Customer Portal</li>
+                        <li data-en="Sales Analytics" data-ar="تحليلات المبيعات">Sales Analytics</li>
+                    </ul>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-header">
+                        <div class="module-icon" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                            👥</div>
+                        <h3 data-en="HR" data-ar="الموارد البشرية">HR</h3>
+                    </div>
+                    <ul class="module-features">
+                        <li data-en="Employee Records" data-ar="سجلات الموظفين">Employee Records</li>
+                        <li data-en="Attendance & Leave" data-ar="الحضور والإجازات">Attendance & Leave</li>
+                        <li data-en="Payroll Processing" data-ar="معالجة الرواتب">Payroll Processing</li>
+                        <li data-en="Performance Reviews" data-ar="تقييمات الأداء">Performance Reviews</li>
+                    </ul>
+                </div>
+
+                <div class="module-card">
+                    <div class="module-header">
+                        <div class="module-icon" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);">
+                            🏭</div>
+                        <h3 data-en="Manufacturing" data-ar="التصنيع">Manufacturing</h3>
+                    </div>
+                    <ul class="module-features">
+                        <li data-en="Bill of Materials" data-ar="قائمة المواد">Bill of Materials</li>
+                        <li data-en="Work Orders" data-ar="أوامر العمل">Work Orders</li>
+                        <li data-en="Production Planning" data-ar="تخطيط الإنتاج">Production Planning</li>
+                        <li data-en="Quality Control" data-ar="مراقبة الجودة">Quality Control</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title" data-en="Why Choose Our ERP?" data-ar="لماذا تختار نظامنا؟">Why Choose Our
+                        ERP?</h2>
+                    <p class="about-description"
+                        data-en="Built on ERPNext, the world's best 100% open-source ERP, our system provides enterprise-grade features without the enterprise price tag. Designed for growing businesses, it scales with you from startup to enterprise."
+                        data-ar="مبني على ERPNext، أفضل نظام تخطيط موارد مؤسسات مفتوح المصدر 100٪ في العالم، يوفر نظامنا ميزات على مستوى المؤسسات دون سعر المؤسسات. مصمم للشركات النامية، ينمو معك من شركة ناشئة إلى مؤسسة.">
+                        Built on ERPNext, the world's best 100% open-source ERP, our system provides enterprise-grade
+                        features without the enterprise price tag. Designed for growing businesses, it scales with you
+                        from startup to enterprise.
+                    </p>
+
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <div class="about-feature-icon">✓</div>
+                            <div>
+                                <h4 data-en="Open Source" data-ar="مفتوح المصدر">Open Source</h4>
+                                <p data-en="Full transparency and control over your system"
+                                    data-ar="شفافية كاملة وتحكم في نظامك">Full transparency and control over your system
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="about-feature">
+                            <div class="about-feature-icon">✓</div>
+                            <div>
+                                <h4 data-en="Customizable" data-ar="قابل للتخصيص">Customizable</h4>
+                                <p data-en="Adapt the system to your unique business needs"
+                                    data-ar="كيّف النظام حسب احتياجات عملك الفريدة">Adapt the system to your unique
+                                    business needs</p>
+                            </div>
+                        </div>
+
+                        <div class="about-feature">
+                            <div class="about-feature-icon">✓</div>
+                            <div>
+                                <h4 data-en="Cloud or On-Premise" data-ar="سحابي أو محلي">Cloud or On-Premise</h4>
+                                <p data-en="Deploy wherever you need, however you want"
+                                    data-ar="انشر حيثما تحتاج، بالطريقة التي تريدها">Deploy wherever you need, however
+                                    you want</p>
+                            </div>
+                        </div>
+
+                        <div class="about-feature">
+                            <div class="about-feature-icon">✓</div>
+                            <div>
+                                <h4 data-en="Active Community" data-ar="مجتمع نشط">Active Community</h4>
+                                <p data-en="Thousands of users and developers worldwide"
+                                    data-ar="آلاف المستخدمين والمطورين حول العالم">Thousands of users and developers
+                                    worldwide</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-image">
+                    <div class="dashboard-preview">
+                        <div class="preview-header">
+                            <div class="preview-dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="preview-content">
+                            <div class="preview-sidebar">
+                                <div class="sidebar-item"></div>
+                                <div class="sidebar-item"></div>
+                                <div class="sidebar-item"></div>
+                                <div class="sidebar-item"></div>
+                                <div class="sidebar-item"></div>
+                            </div>
+                            <div class="preview-main">
+                                <div class="preview-card"></div>
+                                <div class="preview-card"></div>
+                                <div class="preview-card"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-en="Get In Touch" data-ar="تواصل معنا">Get In Touch</h2>
+                <p class="section-subtitle" data-en="Ready to transform your business? Contact us today"
+                    data-ar="مستعد لتحويل عملك؟ اتصل بنا اليوم">
+                    Ready to transform your business? Contact us today
+                </p>
+            </div>
+
+            <div class="contact-content">
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name" data-en="Name" data-ar="الاسم">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" data-en="Email" data-ar="البريد الإلكتروني">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="company" data-en="Company" data-ar="الشركة">Company</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="message" data-en="Message" data-ar="الرسالة">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-large" data-en="Send Message"
+                        data-ar="إرسال الرسالة">Send Message</button>
+                </form>
+
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">📧</div>
+                        <h3 data-en="Email" data-ar="البريد الإلكتروني">Email</h3>
+                        <p>info@yourcompany.com</p>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">📱</div>
+                        <h3 data-en="Phone" data-ar="الهاتف">Phone</h3>
+                        <p>+1 (555) 123-4567</p>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">📍</div>
+                        <h3 data-en="Location" data-ar="الموقع">Location</h3>
+                        <p data-en="Your City, Country" data-ar="مدينتك، بلدك">Your City, Country</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="40" rx="8" fill="url(#footer-logo-gradient)" />
+                            <path d="M12 20L18 26L28 14" stroke="white" stroke-width="3" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <defs>
+                                <linearGradient id="footer-logo-gradient" x1="0" y1="0" x2="40" y2="40">
+                                    <stop offset="0%" stop-color="#667eea" />
+                                    <stop offset="100%" stop-color="#764ba2" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span data-en="ERPNext" data-ar="إي آر بي نكست">ERPNext</span>
+                    </div>
+                    <p class="footer-description" data-en="Modern ERP solution for growing businesses"
+                        data-ar="حل تخطيط موارد مؤسسات حديث للشركات النامية">
+                        Modern ERP solution for growing businesses
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h4 data-en="Product" data-ar="المنتج">Product</h4>
+                    <ul>
+                        <li><a href="#features" data-en="Features" data-ar="المميزات">Features</a></li>
+                        <li><a href="#modules" data-en="Modules" data-ar="الوحدات">Modules</a></li>
+                        <li><a href="#" data-en="Pricing" data-ar="الأسعار">Pricing</a></li>
+                        <li><a href="#" data-en="Updates" data-ar="التحديثات">Updates</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 data-en="Company" data-ar="الشركة">Company</h4>
+                    <ul>
+                        <li><a href="#about" data-en="About" data-ar="عن النظام">About</a></li>
+                        <li><a href="#" data-en="Blog" data-ar="المدونة">Blog</a></li>
+                        <li><a href="#contact" data-en="Contact" data-ar="اتصل بنا">Contact</a></li>
+                        <li><a href="#" data-en="Careers" data-ar="الوظائف">Careers</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 data-en="Resources" data-ar="الموارد">Resources</h4>
+                    <ul>
+                        <li><a href="#" data-en="Documentation" data-ar="التوثيق">Documentation</a></li>
+                        <li><a href="#" data-en="Support" data-ar="الدعم">Support</a></li>
+                        <li><a href="#" data-en="Community" data-ar="المجتمع">Community</a></li>
+                        <li><a href="#" data-en="API" data-ar="واجهة برمجية">API</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p data-en="© 2024 ERPNext. All rights reserved." data-ar="© 2024 إي آر بي نكست. جميع الحقوق محفوظة.">
+                    © 2024 ERPNext. All rights reserved.
+                </p>
+                <div class="footer-links">
+                    <a href="#" data-en="Privacy Policy" data-ar="سياسة الخصوصية">Privacy Policy</a>
+                    <a href="#" data-en="Terms of Service" data-ar="شروط الخدمة">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/assets/correspondence/js/main.js"></script>
+</body>
+
+</html>

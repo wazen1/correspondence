@@ -29,8 +29,8 @@ app_license = "mit"
 # app_include_js = "/assets/correspondence/js/correspondence.js"
 
 # include js, css files in header of web template
-# web_include_css = "/assets/correspondence/css/correspondence.css"
-# web_include_js = "/assets/correspondence/js/correspondence.js"
+web_include_css = "/assets/correspondence/css/style.css"
+web_include_js = "/assets/correspondence/js/main.js"
 
 # include custom scss in every website theme (without file extension ".scss")
 # website_theme_scss = "correspondence/public/scss/website"
@@ -137,34 +137,24 @@ app_license = "mit"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
-# }
+doc_events = {
+	"Incoming Letter": {
+		"on_update": "correspondence.correspondence.utils.notification_utils.notify_on_assignment",
+		"validate": "correspondence.correspondence.utils.notification_utils.notify_on_status_change"
+	},
+	"Outgoing Letter": {
+		"validate": "correspondence.correspondence.utils.notification_utils.notify_on_status_change"
+	}
+}
 
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"correspondence.tasks.all"
-# 	],
-# 	"daily": [
-# 		"correspondence.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"correspondence.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"correspondence.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"correspondence.tasks.monthly"
-# 	],
-# }
+scheduler_events = {
+	"daily": [
+		"correspondence.correspondence.utils.notification_utils.check_daily_follow_ups"
+	]
+}
 
 # Testing
 # -------

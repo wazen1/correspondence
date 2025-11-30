@@ -1,0 +1,134 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "autoname": "field:topic_name",
+    "creation": "2025-11-25 09:00:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "topic_name",
+        "parent_topic",
+        "column_break_1",
+        "color",
+        "icon",
+        "description_section",
+        "description",
+        "keywords",
+        "auto_categorization_section",
+        "auto_categorization_rules",
+        "enable_auto_categorization"
+    ],
+    "fields": [
+        {
+            "fieldname": "topic_name",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "Topic Name",
+            "reqd": 1,
+            "unique": 1
+        },
+        {
+            "fieldname": "parent_topic",
+            "fieldtype": "Link",
+            "label": "Parent Topic",
+            "options": "Topic"
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "color",
+            "fieldtype": "Color",
+            "label": "Color"
+        },
+        {
+            "fieldname": "icon",
+            "fieldtype": "Data",
+            "label": "Icon"
+        },
+        {
+            "fieldname": "description_section",
+            "fieldtype": "Section Break",
+            "label": "Description"
+        },
+        {
+            "fieldname": "description",
+            "fieldtype": "Text Editor",
+            "label": "Description"
+        },
+        {
+            "description": "Comma-separated keywords for auto-categorization",
+            "fieldname": "keywords",
+            "fieldtype": "Small Text",
+            "label": "Keywords"
+        },
+        {
+            "collapsible": 1,
+            "fieldname": "auto_categorization_section",
+            "fieldtype": "Section Break",
+            "label": "Auto Categorization"
+        },
+        {
+            "description": "JSON rules for auto-categorization (advanced)",
+            "fieldname": "auto_categorization_rules",
+            "fieldtype": "Code",
+            "label": "Auto Categorization Rules",
+            "options": "JSON"
+        },
+        {
+            "default": "1",
+            "fieldname": "enable_auto_categorization",
+            "fieldtype": "Check",
+            "label": "Enable Auto Categorization"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2025-11-25 09:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Correspondence",
+    "name": "Topic",
+    "naming_rule": "By fieldname",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        },
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "Correspondence Manager",
+            "share": 1,
+            "write": 1
+        },
+        {
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "Correspondence User"
+        }
+    ],
+    "search_fields": "topic_name,keywords",
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": [],
+    "track_changes": 1
+}

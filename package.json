@@ -1,0 +1,8 @@
+{
+  "name": "correspondence",
+  "version": "1.0.0",
+  "description": "Complete Archiving and Correspondence Management System",
+  "dependencies": {
+    "pdfjs-dist": "^3.11.174"
+  }
+}

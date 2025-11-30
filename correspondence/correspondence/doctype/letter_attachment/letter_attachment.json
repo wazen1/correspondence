@@ -1,0 +1,107 @@
+{
+    "actions": [],
+    "creation": "2025-11-25 09:00:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "file",
+        "preview_html",
+        "file_name",
+        "file_size",
+        "file_type",
+        "column_break_1",
+        "is_original",
+        "ocr_extracted",
+        "uploaded_by",
+        "uploaded_on",
+        "ocr_section",
+        "ocr_text"
+    ],
+    "fields": [
+        {
+            "fieldname": "file",
+            "fieldtype": "Attach",
+            "in_list_view": 1,
+            "label": "File",
+            "reqd": 1
+        },
+        {
+            "fieldname": "preview_html",
+            "fieldtype": "HTML",
+            "label": "Preview",
+            "read_only": 1
+        },
+        {
+            "fieldname": "file_name",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "File Name",
+            "read_only": 1
+        },
+        {
+            "fieldname": "file_size",
+            "fieldtype": "Int",
+            "label": "File Size (bytes)",
+            "read_only": 1
+        },
+        {
+            "fieldname": "file_type",
+            "fieldtype": "Data",
+            "label": "File Type",
+            "read_only": 1
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": "1",
+            "fieldname": "is_original",
+            "fieldtype": "Check",
+            "label": "Is Original"
+        },
+        {
+            "default": "0",
+            "fieldname": "ocr_extracted",
+            "fieldtype": "Check",
+            "label": "OCR Extracted",
+            "read_only": 1
+        },
+        {
+            "fieldname": "uploaded_by",
+            "fieldtype": "Link",
+            "label": "Uploaded By",
+            "options": "User",
+            "read_only": 1
+        },
+        {
+            "fieldname": "uploaded_on",
+            "fieldtype": "Datetime",
+            "label": "Uploaded On",
+            "read_only": 1
+        },
+        {
+            "collapsible": 1,
+            "fieldname": "ocr_section",
+            "fieldtype": "Section Break",
+            "label": "OCR Text"
+        },
+        {
+            "fieldname": "ocr_text",
+            "fieldtype": "Long Text",
+            "label": "OCR Text",
+            "read_only": 1
+        }
+    ],
+    "istable": 1,
+    "modified": "2025-11-25 09:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Correspondence",
+    "name": "Letter Attachment",
+    "owner": "Administrator",
+    "permissions": [],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": []
+}

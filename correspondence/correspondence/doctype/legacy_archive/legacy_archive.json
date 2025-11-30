@@ -1,0 +1,150 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "autoname": "format:LEG-ARC-{YYYY}-{#####}",
+    "creation": "2025-11-26 10:00:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "section_general",
+        "subject",
+        "date",
+        "document_type",
+        "legacy_reference_number",
+        "column_break_1",
+        "source",
+        "destination",
+        "physical_location",
+        "section_content",
+        "summary",
+        "keywords",
+        "section_attachments",
+        "attachments"
+    ],
+    "fields": [
+        {
+            "fieldname": "section_general",
+            "fieldtype": "Section Break",
+            "label": "General Information"
+        },
+        {
+            "fieldname": "subject",
+            "fieldtype": "Data",
+            "in_global_search": 1,
+            "in_list_view": 1,
+            "label": "Subject",
+            "reqd": 1
+        },
+        {
+            "fieldname": "date",
+            "fieldtype": "Date",
+            "in_list_view": 1,
+            "label": "Document Date",
+            "reqd": 1
+        },
+        {
+            "fieldname": "document_type",
+            "fieldtype": "Select",
+            "in_list_view": 1,
+            "in_standard_filter": 1,
+            "label": "Document Type",
+            "options": "Letter\nContract\nMemo\nReport\nOther",
+            "reqd": 1
+        },
+        {
+            "fieldname": "legacy_reference_number",
+            "fieldtype": "Data",
+            "label": "Legacy Reference Number",
+            "unique": 0
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "source",
+            "fieldtype": "Data",
+            "label": "Source / Sender"
+        },
+        {
+            "fieldname": "destination",
+            "fieldtype": "Data",
+            "label": "Destination / Recipient"
+        },
+        {
+            "fieldname": "physical_location",
+            "fieldtype": "Link",
+            "label": "Physical Location",
+            "options": "Archive Location"
+        },
+        {
+            "fieldname": "section_content",
+            "fieldtype": "Section Break",
+            "label": "Content & Indexing"
+        },
+        {
+            "fieldname": "summary",
+            "fieldtype": "Text",
+            "label": "Summary"
+        },
+        {
+            "fieldname": "keywords",
+            "fieldtype": "Data",
+            "label": "Keywords / Tags"
+        },
+        {
+            "fieldname": "section_attachments",
+            "fieldtype": "Section Break",
+            "label": "Attachments"
+        },
+        {
+            "fieldname": "attachments",
+            "fieldtype": "Table",
+            "label": "Attachments",
+            "options": "Letter Attachment"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2025-11-26 10:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Correspondence",
+    "name": "Legacy Archive",
+    "naming_rule": "Expression",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        },
+        {
+            "create": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "Correspondence Manager",
+            "share": 1,
+            "write": 1
+        },
+        {
+            "read": 1,
+            "report": 1,
+            "role": "Correspondence User"
+        }
+    ],
+    "search_fields": "subject,legacy_reference_number,keywords",
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1
+}

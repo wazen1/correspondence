@@ -1,0 +1,165 @@
+{
+    "actions": [],
+    "creation": "2025-11-25 09:00:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "reference_section",
+        "reference_doctype",
+        "reference_name",
+        "column_break_1",
+        "version_number",
+        "is_current",
+        "version_details_section",
+        "editor",
+        "created_on",
+        "column_break_2",
+        "changes_summary",
+        "files_section",
+        "original_file",
+        "working_copy",
+        "file_hash"
+    ],
+    "fields": [
+        {
+            "fieldname": "reference_section",
+            "fieldtype": "Section Break",
+            "label": "Reference"
+        },
+        {
+            "fieldname": "reference_doctype",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "in_standard_filter": 1,
+            "label": "Reference DocType",
+            "options": "DocType",
+            "reqd": 1
+        },
+        {
+            "fieldname": "reference_name",
+            "fieldtype": "Dynamic Link",
+            "in_list_view": 1,
+            "in_standard_filter": 1,
+            "label": "Reference Name",
+            "options": "reference_doctype",
+            "reqd": 1
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "version_number",
+            "fieldtype": "Int",
+            "in_list_view": 1,
+            "label": "Version Number",
+            "read_only": 1,
+            "reqd": 1
+        },
+        {
+            "default": "1",
+            "fieldname": "is_current",
+            "fieldtype": "Check",
+            "label": "Is Current Version"
+        },
+        {
+            "fieldname": "version_details_section",
+            "fieldtype": "Section Break",
+            "label": "Version Details"
+        },
+        {
+            "fieldname": "editor",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "label": "Editor",
+            "options": "User",
+            "read_only": 1
+        },
+        {
+            "default": "Now",
+            "fieldname": "created_on",
+            "fieldtype": "Datetime",
+            "label": "Created On",
+            "read_only": 1
+        },
+        {
+            "fieldname": "column_break_2",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "changes_summary",
+            "fieldtype": "Text",
+            "label": "Changes Summary"
+        },
+        {
+            "fieldname": "files_section",
+            "fieldtype": "Section Break",
+            "label": "Files"
+        },
+        {
+            "description": "Original file (read-only)",
+            "fieldname": "original_file",
+            "fieldtype": "Attach",
+            "label": "Original File",
+            "read_only": 1
+        },
+        {
+            "description": "Working copy for editing",
+            "fieldname": "working_copy",
+            "fieldtype": "Attach",
+            "label": "Working Copy"
+        },
+        {
+            "fieldname": "file_hash",
+            "fieldtype": "Data",
+            "label": "File Hash",
+            "read_only": 1
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2025-11-25 09:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Correspondence",
+    "name": "Document Version",
+    "naming_rule": "Random",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        },
+        {
+            "create": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "Correspondence Manager",
+            "share": 1,
+            "write": 1
+        },
+        {
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "Correspondence User"
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": [],
+    "track_changes": 1
+}

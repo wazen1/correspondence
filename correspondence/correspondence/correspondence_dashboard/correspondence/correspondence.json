@@ -1,0 +1,25 @@
+{
+ "cards": [],
+ "charts": [
+  {
+   "chart": "Incoming Letters by Status",
+   "width": "Full"
+  },
+  {
+   "chart": "Outgoing Letters by Status",
+   "width": "Full"
+  }
+ ],
+ "creation": "2025-11-26 10:53:27.967404",
+ "dashboard_name": "Correspondence",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 1,
+ "is_standard": 1,
+ "modified": "2025-11-26 10:54:53.127025",
+ "modified_by": "Administrator",
+ "module": "Correspondence",
+ "name": "Correspondence",
+ "owner": "Administrator"
+}

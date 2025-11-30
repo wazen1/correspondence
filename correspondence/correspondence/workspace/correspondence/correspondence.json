@@ -1,0 +1,151 @@
+{
+ "charts": [
+  {
+   "chart_name": "Incoming Letters by Status",
+   "label": "Incoming Letters by Status"
+  }
+ ],
+ "content": "[{\"id\":\"5Du8irgKCM\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Correspondence Management</span>\",\"col\":12}},{\"id\":\"WYuwaKsb6s\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Incoming Letters by Status\",\"col\":12}},{\"id\":\"TJRYepfA9W\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Incoming Letter\",\"col\":3}},{\"id\":\"J36N8A6J-V\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Outgoing Letter\",\"col\":3}},{\"id\":\"e8f_HIAE-z\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Customer File\",\"col\":3}},{\"id\":\"8mfaUykVPW\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Archive Location\",\"col\":3}},{\"id\":\"_uWEu6ICX6\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Legacy Archive\",\"col\":3}},{\"id\":\"g49lJzHBPm\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"GM Decision\",\"col\":3}},{\"id\":\"1iZ3yWebM4\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">\u062a\u0642\u0631\u064a\u0631</span>\",\"col\":12}},{\"id\":\"tTm5BIZuLd\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Outgoing Letter Register\",\"col\":3}},{\"id\":\"fPfNAt6KAL\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Incoming Letter Register\",\"col\":3}}]",
+ "creation": "2025-11-25 14:30:00",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "hide_custom": 0,
+ "idx": 0,
+ "is_hidden": 0,
+ "label": "Correspondence",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Incoming Letter",
+   "link_count": 0,
+   "link_to": "Incoming Letter",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Outgoing Letter",
+   "link_count": 0,
+   "link_to": "Outgoing Letter",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Incoming Letter Register",
+   "link_count": 0,
+   "link_to": "Incoming Letter Register",
+   "link_type": "Report",
+   "onboard": 0,
+   "report_ref_doctype": "Incoming Letter",
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Outgoing Letter Register",
+   "link_count": 0,
+   "link_to": "Outgoing Letter Register",
+   "link_type": "Report",
+   "onboard": 0,
+   "report_ref_doctype": "Outgoing Letter",
+   "type": "Link"
+  }
+ ],
+ "modified": "2025-11-26 13:33:19.996264",
+ "modified_by": "Administrator",
+ "module": "Correspondence",
+ "name": "Correspondence",
+ "number_cards": [],
+ "owner": "Administrator",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "Correspondence User"
+  },
+  {
+   "role": "Correspondence Manager"
+  },
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Administrator"
+  }
+ ],
+ "sequence_id": 0.0,
+ "shortcuts": [
+  {
+   "color": "Orange",
+   "doc_view": "List",
+   "label": "Outgoing Letter",
+   "link_to": "Outgoing Letter",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Customer File",
+   "link_to": "Customer File",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Outgoing Letter Register",
+   "link_to": "Outgoing Letter Register",
+   "report_ref_doctype": "Outgoing Letter",
+   "type": "Report"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "Incoming Letter",
+   "link_to": "Incoming Letter",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "List",
+   "label": "Archive Location",
+   "link_to": "Archive Location",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Incoming Letter Register",
+   "link_to": "Incoming Letter Register",
+   "report_ref_doctype": "Incoming Letter",
+   "type": "Report"
+  },
+  {
+   "color": "Yellow",
+   "doc_view": "List",
+   "label": "Legacy Archive",
+   "link_to": "Legacy Archive",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Red",
+   "doc_view": "List",
+   "label": "GM Decision",
+   "link_to": "GM Decision",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Correspondence"
+}

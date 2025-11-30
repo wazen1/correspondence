@@ -1,0 +1,137 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "autoname": "field:location_code",
+    "creation": "2025-11-25 09:00:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "location_code",
+        "building",
+        "column_break_1",
+        "floor",
+        "room",
+        "physical_location_section",
+        "shelf",
+        "box",
+        "column_break_2",
+        "capacity",
+        "current_count",
+        "available_space"
+    ],
+    "fields": [
+        {
+            "fieldname": "location_code",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "Location Code",
+            "reqd": 1,
+            "unique": 1
+        },
+        {
+            "fieldname": "building",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "Building"
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "floor",
+            "fieldtype": "Data",
+            "label": "Floor"
+        },
+        {
+            "fieldname": "room",
+            "fieldtype": "Data",
+            "label": "Room"
+        },
+        {
+            "fieldname": "physical_location_section",
+            "fieldtype": "Section Break",
+            "label": "Physical Location"
+        },
+        {
+            "fieldname": "shelf",
+            "fieldtype": "Data",
+            "label": "Shelf"
+        },
+        {
+            "fieldname": "box",
+            "fieldtype": "Data",
+            "label": "Box"
+        },
+        {
+            "fieldname": "column_break_2",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": "100",
+            "fieldname": "capacity",
+            "fieldtype": "Int",
+            "label": "Capacity"
+        },
+        {
+            "default": "0",
+            "fieldname": "current_count",
+            "fieldtype": "Int",
+            "label": "Current Count",
+            "read_only": 1
+        },
+        {
+            "fieldname": "available_space",
+            "fieldtype": "Int",
+            "label": "Available Space",
+            "read_only": 1
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2025-11-25 09:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Correspondence",
+    "name": "Archive Location",
+    "naming_rule": "By fieldname",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        },
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "Correspondence Manager",
+            "share": 1,
+            "write": 1
+        },
+        {
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "Correspondence User"
+        }
+    ],
+    "search_fields": "location_code,building,floor,room",
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": []
+}
