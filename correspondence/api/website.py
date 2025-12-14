@@ -108,16 +108,18 @@ def send_notification_email(name, email, company, message):
         if admin_email:
             frappe.sendmail(
                 recipients=[admin_email],
-                subject=f"New Website Contact Form Submission - {name}",
+                subject=f"نموذج تواصل جديد من الموقع - {name}",
                 message=f"""
-                    <h3>New Contact Form Submission</h3>
-                    <p><strong>Name:</strong> {name}</p>
-                    <p><strong>Email:</strong> {email}</p>
-                    <p><strong>Company:</strong> {company or 'Not provided'}</p>
-                    <p><strong>Message:</strong></p>
-                    <p>{message or 'No message provided'}</p>
-                    <hr>
-                    <p><small>Submitted from website contact form</small></p>
+                    <div style="direction: rtl; text-align: right; font-family: Tahoma, Arial, sans-serif;">
+                        <h3>نموذج تواصل جديد</h3>
+                        <p><strong>الاسم:</strong> {name}</p>
+                        <p><strong>البريد الإلكتروني:</strong> {email}</p>
+                        <p><strong>الشركة:</strong> {company or 'غير محدد'}</p>
+                        <p><strong>الرسالة:</strong></p>
+                        <p>{message or 'لا توجد رسالة'}</p>
+                        <hr>
+                        <p><small>تم الإرسال من نموذج التواصل بالموقع</small></p>
+                    </div>
                 """,
                 now=True
             )

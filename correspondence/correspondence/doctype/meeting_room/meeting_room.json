@@ -1,0 +1,170 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "autoname": "field:room_code",
+    "creation": "2025-12-10 10:20:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "room_code",
+        "room_name",
+        "capacity",
+        "location",
+        "column_break_1",
+        "is_active",
+        "description",
+        "section_break_facilities",
+        "has_projector",
+        "has_whiteboard",
+        "has_video_conferencing",
+        "has_audio_system",
+        "column_break_2",
+        "has_wifi",
+        "has_air_conditioning",
+        "notes"
+    ],
+    "fields": [
+        {
+            "fieldname": "room_code",
+            "fieldtype": "Data",
+            "label": "Room Code",
+            "reqd": 1,
+            "in_list_view": 1,
+            "description": "Short code for the room (e.g., A101, MAIN-HALL)"
+        },
+        {
+            "fieldname": "room_name",
+            "fieldtype": "Data",
+            "label": "Room Name",
+            "reqd": 1,
+            "in_list_view": 1,
+            "description": "Full name of the meeting room"
+        },
+        {
+            "fieldname": "capacity",
+            "fieldtype": "Int",
+            "label": "Capacity",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "location",
+            "fieldtype": "Data",
+            "label": "Location",
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "is_active",
+            "fieldtype": "Check",
+            "label": "Is Active",
+            "default": "1",
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "description",
+            "fieldtype": "Small Text",
+            "label": "Description"
+        },
+        {
+            "fieldname": "section_break_facilities",
+            "fieldtype": "Section Break",
+            "label": "Facilities"
+        },
+        {
+            "fieldname": "has_projector",
+            "fieldtype": "Check",
+            "label": "Has Projector",
+            "default": "0"
+        },
+        {
+            "fieldname": "has_whiteboard",
+            "fieldtype": "Check",
+            "label": "Has Whiteboard",
+            "default": "0"
+        },
+        {
+            "fieldname": "has_video_conferencing",
+            "fieldtype": "Check",
+            "label": "Has Video Conferencing",
+            "default": "0"
+        },
+        {
+            "fieldname": "has_audio_system",
+            "fieldtype": "Check",
+            "label": "Has Audio System",
+            "default": "0"
+        },
+        {
+            "fieldname": "column_break_2",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "has_wifi",
+            "fieldtype": "Check",
+            "label": "Has WiFi",
+            "default": "0"
+        },
+        {
+            "fieldname": "has_air_conditioning",
+            "fieldtype": "Check",
+            "label": "Has Air Conditioning",
+            "default": "0"
+        },
+        {
+            "fieldname": "notes",
+            "fieldtype": "Text",
+            "label": "Notes"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2025-12-10 10:20:00.000000",
+    "modified_by": "Administrator",
+    "module": "Correspondence",
+    "name": "Meeting Room",
+    "naming_rule": "By fieldname",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        },
+        {
+            "create": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "Correspondence Manager",
+            "share": 1,
+            "write": 1
+        },
+        {
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "Correspondence User"
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": [],
+    "title_field": "room_name",
+    "track_changes": 1
+}

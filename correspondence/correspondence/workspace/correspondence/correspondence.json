@@ -1,11 +1,19 @@
 {
  "charts": [
   {
-   "chart_name": "Incoming Letters by Status",
-   "label": "Incoming Letters by Status"
+   "chart_name": "Incoming Letters Trend",
+   "label": "Incoming Letters Trend"
+  },
+  {
+   "chart_name": "Outgoing Letters Trend",
+   "label": "Outgoing Letters Trend"
+  },
+  {
+   "chart_name": "Internal Memos Trend",
+   "label": "Internal Memos Trend"
   }
  ],
- "content": "[{\"id\":\"5Du8irgKCM\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Correspondence Management</span>\",\"col\":12}},{\"id\":\"WYuwaKsb6s\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Incoming Letters by Status\",\"col\":12}},{\"id\":\"TJRYepfA9W\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Incoming Letter\",\"col\":3}},{\"id\":\"J36N8A6J-V\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Outgoing Letter\",\"col\":3}},{\"id\":\"e8f_HIAE-z\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Customer File\",\"col\":3}},{\"id\":\"8mfaUykVPW\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Archive Location\",\"col\":3}},{\"id\":\"_uWEu6ICX6\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Legacy Archive\",\"col\":3}},{\"id\":\"g49lJzHBPm\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"GM Decision\",\"col\":3}},{\"id\":\"1iZ3yWebM4\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">\u062a\u0642\u0631\u064a\u0631</span>\",\"col\":12}},{\"id\":\"tTm5BIZuLd\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Outgoing Letter Register\",\"col\":3}},{\"id\":\"fPfNAt6KAL\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Incoming Letter Register\",\"col\":3}}]",
+ "content": "[{\"id\":\"5Du8irgKCM\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Correspondence Management</span>\",\"col\":12}},{\"id\":\"WYuwaKsb6s\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Incoming Letters Trend\",\"col\":4}},{\"id\":\"WYuwaKsb6u\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Outgoing Letters Trend\",\"col\":4}},{\"id\":\"WYuwaKsb6t\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Internal Memos Trend\",\"col\":4}},{\"id\":\"TJRYepfA9W\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Incoming Letter\",\"col\":3}},{\"id\":\"wsdLBRckX7\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u062d\u062c\u0632 \u063a\u0631\u0641 \u0627\u0644\u0627\u062c\u062a\u0645\u0627\u0639\u0627\u062a\",\"col\":3}},{\"id\":\"WDiQASK3lv\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u063a\u0631\u0641 \u0627\u0644\u0627\u062c\u062a\u0645\u0627\u0639\u0627\u062a\",\"col\":3}},{\"id\":\"0rvtY5lZj3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u0627\u0644\u0645\u0631\u0627\u0633\u0644\u0627\u062a \u0627\u0644\u062f\u0627\u062e\u0644\u064a\u0629\",\"col\":3}},{\"id\":\"J36N8A6J-V\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Outgoing Letter\",\"col\":3}},{\"id\":\"e8f_HIAE-z\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Customer File\",\"col\":3}},{\"id\":\"8mfaUykVPW\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Archive Location\",\"col\":3}},{\"id\":\"_uWEu6ICX6\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Legacy Archive\",\"col\":3}},{\"id\":\"g49lJzHBPm\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"GM Decision\",\"col\":3}},{\"id\":\"1iZ3yWebM4\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">\u062a\u0642\u0631\u064a\u0631</span>\",\"col\":12}},{\"id\":\"tTm5BIZuLd\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Outgoing Letter Register\",\"col\":3}},{\"id\":\"fPfNAt6KAL\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Incoming Letter Register\",\"col\":3}},{\"id\":\"fPfNAt6KAM\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Internal Memo Register\",\"col\":3}}]",
  "creation": "2025-11-25 14:30:00",
  "custom_blocks": [],
  "docstatus": 0,
@@ -38,6 +46,16 @@
   {
    "hidden": 0,
    "is_query_report": 0,
+   "label": "Internal Memo",
+   "link_count": 0,
+   "link_to": "Internal Memo",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
    "label": "Incoming Letter Register",
    "link_count": 0,
    "link_to": "Incoming Letter Register",
@@ -56,14 +74,26 @@
    "onboard": 0,
    "report_ref_doctype": "Outgoing Letter",
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Internal Memo Register",
+   "link_count": 0,
+   "link_to": "Internal Memo Register",
+   "link_type": "Report",
+   "onboard": 0,
+   "report_ref_doctype": "Internal Memo",
+   "type": "Link"
   }
  ],
- "modified": "2025-11-26 13:33:19.996264",
+ "modified": "2025-12-11 14:10:13.130039",
  "modified_by": "Administrator",
  "module": "Correspondence",
  "name": "Correspondence",
  "number_cards": [],
  "owner": "Administrator",
+ "parent_page": "",
  "public": 1,
  "quick_lists": [],
  "roles": [
@@ -80,13 +110,21 @@
    "role": "Administrator"
   }
  ],
- "sequence_id": 0.0,
+ "sequence_id": 2.0,
  "shortcuts": [
   {
    "color": "Orange",
    "doc_view": "List",
    "label": "Outgoing Letter",
    "link_to": "Outgoing Letter",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Cyan",
+   "doc_view": "List",
+   "label": "\u062d\u062c\u0632 \u063a\u0631\u0641 \u0627\u0644\u0627\u062c\u062a\u0645\u0627\u0639\u0627\u062a",
+   "link_to": "Meeting Room Booking",
    "stats_filter": "[]",
    "type": "DocType"
   },
@@ -101,10 +139,26 @@
   {
    "color": "Grey",
    "doc_view": "List",
+   "label": "\u063a\u0631\u0641 \u0627\u0644\u0627\u062c\u062a\u0645\u0627\u0639\u0627\u062a",
+   "link_to": "Meeting Room",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
    "label": "Outgoing Letter Register",
    "link_to": "Outgoing Letter Register",
    "report_ref_doctype": "Outgoing Letter",
    "type": "Report"
+  },
+  {
+   "color": "Orange",
+   "doc_view": "List",
+   "label": "\u0627\u0644\u0645\u0631\u0627\u0633\u0644\u0627\u062a \u0627\u0644\u062f\u0627\u062e\u0644\u064a\u0629",
+   "link_to": "Internal Memo",
+   "stats_filter": "[]",
+   "type": "DocType"
   },
   {
    "color": "Green",
@@ -145,6 +199,14 @@
    "link_to": "GM Decision",
    "stats_filter": "[]",
    "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Internal Memo Register",
+   "link_to": "Internal Memo Register",
+   "report_ref_doctype": "Internal Memo",
+   "type": "Report"
   }
  ],
  "title": "Correspondence"

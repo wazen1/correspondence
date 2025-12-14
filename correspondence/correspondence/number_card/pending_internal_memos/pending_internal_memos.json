@@ -1,0 +1,22 @@
+{
+    "aggregate_function_based_on": "",
+    "color": "Orange",
+    "creation": "2025-12-10 10:00:00.000000",
+    "docstatus": 0,
+    "doctype": "Number Card",
+    "document_type": "Internal Memo",
+    "dynamic_filters_json": "[]",
+    "filters_json": "[[\"Internal Memo\",\"status\",\"in\",[\"Draft\",\"Sent\",\"Received\"]]]",
+    "function": "Count",
+    "idx": 0,
+    "is_public": 1,
+    "is_standard": 1,
+    "label": "Pending Internal Memos",
+    "modified": "2025-12-10 10:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Correspondence",
+    "name": "Pending Internal Memos",
+    "owner": "Administrator",
+    "show_percentage_stats": 0,
+    "type": "Document Type"
+}

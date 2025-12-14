@@ -190,42 +190,80 @@ def find_similar_by_keywords(doctype, current_doc, search_text, limit=10):
 		if not keywords:
 			return []
 		
-		# Build search query
-		search_query = " ".join(keywords[:5])  # Use top 5 keywords
+		# Use top keywords for search
+		search_keywords = keywords[:5]
+		
+		# Build filters with OR conditions for better matching
+		results = []
 		
 		if doctype == "Incoming Letter":
-			documents = frappe.get_all(
-				"Incoming Letter",
-				filters={
-					"name": ["!=", current_doc],
-					"subject": ["like", f"%{search_query}%"]
-				},
-				fields=["name", "subject", "sender"],
-				limit=limit
-			)
+			# Search in subject, summary, and ocr_text
+			for keyword in search_keywords:
+				docs = frappe.get_all(
+					"Incoming Letter",
+					filters={
+						"name": ["!=", current_doc]
+					},
+					or_filters=[
+						["subject", "like", f"%{keyword}%"],
+						["summary", "like", f"%{keyword}%"],
+						["ocr_text", "like", f"%{keyword}%"]
+					],
+					fields=["name", "subject", "sender", "summary"],
+					limit=limit * 2  # Get more to filter duplicates
+				)
+				
+				for doc in docs:
+					# Avoid duplicates
+					if not any(r["name"] == doc.name for r in results):
+						results.append({
+							"doctype": doctype,
+							"name": doc.get("name"),
+							"score": 0.5,  # Default score for keyword matching
+							"subject": doc.get("subject", ""),
+							"sender_recipient": doc.get("sender", "")
+						})
+						
+						if len(results) >= limit:
+							break
+				
+				if len(results) >= limit:
+					break
 		else:
-			documents = frappe.get_all(
-				"Outgoing Letter",
-				filters={
-					"name": ["!=", current_doc],
-					"subject": ["like", f"%{search_query}%"]
-				},
-				fields=["name", "subject", "recipient"],
-				limit=limit
-			)
+			# Search in subject, body_text, and ocr_text for Outgoing Letter
+			for keyword in search_keywords:
+				docs = frappe.get_all(
+					"Outgoing Letter",
+					filters={
+						"name": ["!=", current_doc]
+					},
+					or_filters=[
+						["subject", "like", f"%{keyword}%"],
+						["body_text", "like", f"%{keyword}%"],
+						["ocr_text", "like", f"%{keyword}%"]
+					],
+					fields=["name", "subject", "recipient", "body_text"],
+					limit=limit * 2
+				)
+				
+				for doc in docs:
+					# Avoid duplicates
+					if not any(r["name"] == doc.name for r in results):
+						results.append({
+							"doctype": doctype,
+							"name": doc.get("name"),
+							"score": 0.5,
+							"subject": doc.get("subject", ""),
+							"sender_recipient": doc.get("recipient", "")
+						})
+						
+						if len(results) >= limit:
+							break
+				
+				if len(results) >= limit:
+					break
 		
-		# Format results
-		results = []
-		for doc in documents:
-			results.append({
-				"doctype": doctype,
-				"name": doc.get("name"),
-				"score": 0.5,  # Default score for keyword matching
-				"subject": doc.get("subject", ""),
-				"sender_recipient": doc.get("sender") if doctype == "Incoming Letter" else doc.get("recipient")
-			})
-		
-		return results
+		return results[:limit]
 	
 	except Exception as e:
 		frappe.log_error(f"Keyword search failed: {str(e)}")
@@ -255,8 +293,22 @@ def get_similar_documents(doctype, docname):
 		else:
 			return {"success": False, "error": "Unsupported doctype"}
 		
+		# Check if search text is empty
+		if not search_text.strip():
+			return {
+				"success": False, 
+				"error": "No content available for similarity search. Please add subject, summary, or body text."
+			}
+		
 		# Find similar documents
 		similar = find_similar_letters(doctype, docname, search_text)
+		
+		# Log if no similar documents found
+		if not similar:
+			frappe.log_error(
+				f"No similar documents found for {doctype} {docname}. Search text: {search_text[:100]}...",
+				"Similarity Search"
+			)
 		
 		return {"success": True, "documents": similar}
 	

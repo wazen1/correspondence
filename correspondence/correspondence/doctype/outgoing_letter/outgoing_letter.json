@@ -1,295 +1,310 @@
 {
-    "actions": [],
-    "allow_rename": 1,
-    "autoname": "format:OUT-LTR-{YYYY}-{#####}",
-    "creation": "2025-11-25 09:00:00.000000",
-    "doctype": "DocType",
-    "editable_grid": 1,
-    "engine": "InnoDB",
-    "field_order": [
-        "letter_details_section",
-        "letter_number",
-        "date_created",
-        "date_sent",
-        "priority",
-        "status",
-        "column_break_2",
-        "recipient",
-        "recipient_organization",
-        "department",
-        "related_incoming_letter",
-        "content_section",
-        "subject",
-        "body_text",
-        "ocr_text",
-        "attachments_section",
-        "attachments",
-        "related_documents_section",
-        "related_documents",
-        "topics_section",
-        "topics",
-        "follow_up_section",
-        "follow_ups",
-        "archive_section",
-        "is_archived",
-        "archive_number",
-        "column_break_archive",
-        "archive_location",
-        "archived_on",
-        "archived_by",
-        "amended_from"
-    ],
-    "fields": [
-        {
-            "fieldname": "letter_details_section",
-            "fieldtype": "Section Break",
-            "label": "Letter Details"
-        },
-        {
-            "fieldname": "letter_number",
-            "fieldtype": "Data",
-            "label": "Letter Number",
-            "read_only": 1,
-            "unique": 1
-        },
-        {
-            "default": "Today",
-            "fieldname": "date_created",
-            "fieldtype": "Date",
-            "in_list_view": 1,
-            "label": "Date Created",
-            "reqd": 1
-        },
-        {
-            "fieldname": "date_sent",
-            "fieldtype": "Date",
-            "label": "Date Sent"
-        },
-        {
-            "default": "Medium",
-            "fieldname": "priority",
-            "fieldtype": "Select",
-            "in_list_view": 1,
-            "in_standard_filter": 1,
-            "label": "Priority",
-            "options": "Low\nMedium\nHigh\nUrgent",
-            "reqd": 1
-        },
-        {
-            "default": "Draft",
-            "fieldname": "status",
-            "fieldtype": "Select",
-            "in_list_view": 1,
-            "in_standard_filter": 1,
-            "label": "Status",
-            "options": "Draft\nUnder Review\nApproved\nSent\nDelivered\nArchived",
-            "reqd": 1
-        },
-        {
-            "fieldname": "column_break_2",
-            "fieldtype": "Column Break"
-        },
-        {
-            "fieldname": "recipient",
-            "fieldtype": "Data",
-            "in_list_view": 1,
-            "in_standard_filter": 1,
-            "label": "Recipient",
-            "reqd": 1
-        },
-        {
-            "fieldname": "recipient_organization",
-            "fieldtype": "Link",
-            "label": "Recipient Organization",
-            "options": "Company"
-        },
-        {
-            "fieldname": "department",
-            "fieldtype": "Link",
-            "in_standard_filter": 1,
-            "label": "Department",
-            "options": "Department",
-            "reqd": 1
-        },
-        {
-            "fieldname": "related_incoming_letter",
-            "fieldtype": "Link",
-            "label": "Related Incoming Letter",
-            "options": "Incoming Letter"
-        },
-        {
-            "fieldname": "content_section",
-            "fieldtype": "Section Break",
-            "label": "Letter Content"
-        },
-        {
-            "fieldname": "subject",
-            "fieldtype": "Data",
-            "in_global_search": 1,
-            "in_list_view": 1,
-            "label": "Subject",
-            "reqd": 1
-        },
-        {
-            "fieldname": "body_text",
-            "fieldtype": "Text Editor",
-            "label": "Body Text",
-            "reqd": 1
-        },
-        {
-            "fieldname": "ocr_text",
-            "fieldtype": "Long Text",
-            "label": "OCR Text",
-            "read_only": 1
-        },
-        {
-            "fieldname": "attachments_section",
-            "fieldtype": "Section Break",
-            "label": "Attachments"
-        },
-        {
-            "fieldname": "attachments",
-            "fieldtype": "Table",
-            "label": "Attachments",
-            "options": "Letter Attachment"
-        },
-        {
-            "fieldname": "related_documents_section",
-            "fieldtype": "Section Break",
-            "label": "Related Documents"
-        },
-        {
-            "fieldname": "related_documents",
-            "fieldtype": "Table",
-            "label": "Related Documents",
-            "options": "Related Document"
-        },
-        {
-            "fieldname": "topics_section",
-            "fieldtype": "Section Break",
-            "label": "Topics / Categories"
-        },
-        {
-            "fieldname": "topics",
-            "fieldtype": "Table MultiSelect",
-            "label": "Topics",
-            "options": "Letter Topic"
-        },
-        {
-            "fieldname": "follow_up_section",
-            "fieldtype": "Section Break",
-            "label": "Follow Up"
-        },
-        {
-            "fieldname": "follow_ups",
-            "fieldtype": "Table",
-            "label": "Follow Ups",
-            "options": "Letter Follow Up"
-        },
-        {
-            "collapsible": 1,
-            "fieldname": "archive_section",
-            "fieldtype": "Section Break",
-            "label": "Archive Information"
-        },
-        {
-            "default": "0",
-            "fieldname": "is_archived",
-            "fieldtype": "Check",
-            "label": "Is Archived"
-        },
-        {
-            "fieldname": "archive_number",
-            "fieldtype": "Data",
-            "label": "Archive Number",
-            "read_only": 1,
-            "unique": 1
-        },
-        {
-            "fieldname": "column_break_archive",
-            "fieldtype": "Column Break"
-        },
-        {
-            "fieldname": "archive_location",
-            "fieldtype": "Link",
-            "label": "Archive Location",
-            "options": "Archive Location"
-        },
-        {
-            "fieldname": "archived_on",
-            "fieldtype": "Datetime",
-            "label": "Archived On",
-            "read_only": 1
-        },
-        {
-            "fieldname": "archived_by",
-            "fieldtype": "Link",
-            "label": "Archived By",
-            "options": "User",
-            "read_only": 1
-        },
-        {
-            "fieldname": "amended_from",
-            "fieldtype": "Link",
-            "label": "Amended From",
-            "no_copy": 1,
-            "options": "Outgoing Letter",
-            "print_hide": 1,
-            "read_only": 1
-        }
-    ],
-    "index_web_pages_for_search": 1,
-    "is_submittable": 1,
-    "links": [],
-    "modified": "2025-11-25 09:00:00.000000",
-    "modified_by": "Administrator",
-    "module": "Correspondence",
-    "name": "Outgoing Letter",
-    "naming_rule": "Expression",
-    "owner": "Administrator",
-    "permissions": [
-        {
-            "create": 1,
-            "delete": 1,
-            "email": 1,
-            "export": 1,
-            "print": 1,
-            "read": 1,
-            "report": 1,
-            "role": "System Manager",
-            "share": 1,
-            "submit": 1,
-            "write": 1
-        },
-        {
-            "create": 1,
-            "email": 1,
-            "export": 1,
-            "print": 1,
-            "read": 1,
-            "report": 1,
-            "role": "Correspondence Manager",
-            "share": 1,
-            "submit": 1,
-            "write": 1
-        },
-        {
-            "create": 1,
-            "email": 1,
-            "export": 1,
-            "print": 1,
-            "read": 1,
-            "report": 1,
-            "role": "Correspondence User",
-            "write": 1
-        }
-    ],
-    "search_fields": "subject,recipient,letter_number",
-    "sort_field": "modified",
-    "sort_order": "DESC",
-    "states": [],
-    "title_field": "subject",
-    "track_changes": 1,
-    "track_seen": 1,
-    "track_views": 1
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:OUT-LTR-{YYYY}-{#####}",
+ "creation": "2025-11-25 09:00:00",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "letter_details_section",
+  "letter_number",
+  "date_created",
+  "date_sent",
+  "priority",
+  "status",
+  "column_break_2",
+  "recipient",
+  "recipient_organization",
+  "department",
+  "related_incoming_letter",
+  "content_section",
+  "subject",
+  "body_text",
+  "ocr_text",
+  "attachments_section",
+  "attachments",
+  "qr_barcode_section",
+  "qr_code_image",
+  "column_break_qr",
+  "barcode_image",
+  "related_documents_section",
+  "related_documents",
+  "follow_up_section",
+  "follow_ups",
+  "archive_section",
+  "is_archived",
+  "archive_number",
+  "column_break_archive",
+  "archive_location",
+  "archived_on",
+  "archived_by",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "letter_details_section",
+   "fieldtype": "Section Break",
+   "label": "Letter Details"
+  },
+  {
+   "fieldname": "letter_number",
+   "fieldtype": "Data",
+   "label": "Letter Number",
+   "read_only": 1,
+   "unique": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "date_created",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date Created",
+   "reqd": 1
+  },
+  {
+   "fieldname": "date_sent",
+   "fieldtype": "Date",
+   "label": "Date Sent"
+  },
+  {
+   "default": "Medium",
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Priority",
+   "options": "Low\nMedium\nHigh\nUrgent",
+   "reqd": 1
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Draft\nUnder Review\nApproved\nSent\nDelivered\nArchived",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "recipient",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Recipient",
+   "reqd": 1
+  },
+  {
+   "fieldname": "recipient_organization",
+   "fieldtype": "Link",
+   "label": "Recipient Organization",
+   "options": "Company"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Department",
+   "options": "Department",
+   "reqd": 1
+  },
+  {
+   "fieldname": "related_incoming_letter",
+   "fieldtype": "Link",
+   "label": "Related Incoming Letter",
+   "options": "Incoming Letter"
+  },
+  {
+   "fieldname": "content_section",
+   "fieldtype": "Section Break",
+   "label": "Letter Content"
+  },
+  {
+   "fieldname": "subject",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "label": "Subject",
+   "reqd": 1
+  },
+  {
+   "fieldname": "body_text",
+   "fieldtype": "Text Editor",
+   "label": "Body Text",
+   "reqd": 1
+  },
+  {
+   "fieldname": "ocr_text",
+   "fieldtype": "Long Text",
+   "label": "OCR Text",
+   "read_only": 1
+  },
+  {
+   "fieldname": "attachments_section",
+   "fieldtype": "Section Break",
+   "label": "Attachments"
+  },
+  {
+   "fieldname": "attachments",
+   "fieldtype": "Table",
+   "label": "Attachments",
+   "options": "Letter Attachment"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "qr_barcode_section",
+   "fieldtype": "Section Break",
+   "label": "QR Code & Barcode"
+  },
+  {
+   "fieldname": "qr_code_image",
+   "fieldtype": "Attach Image",
+   "label": "QR Code",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_qr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "barcode_image",
+   "fieldtype": "Attach Image",
+   "label": "Barcode",
+   "read_only": 1
+  },
+  {
+   "fieldname": "related_documents_section",
+   "fieldtype": "Section Break",
+   "label": "Related Documents"
+  },
+  {
+   "fieldname": "related_documents",
+   "fieldtype": "Table",
+   "label": "Related Documents",
+   "options": "Related Document"
+  },
+  {
+   "fieldname": "follow_up_section",
+   "fieldtype": "Section Break",
+   "label": "Follow Up"
+  },
+  {
+   "fieldname": "follow_ups",
+   "fieldtype": "Table",
+   "label": "Follow Ups",
+   "options": "Letter Follow Up"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "archive_section",
+   "fieldtype": "Tab Break",
+   "label": "Archive Information"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_archived",
+   "fieldtype": "Check",
+   "label": "Is Archived"
+  },
+  {
+   "fieldname": "archive_number",
+   "fieldtype": "Data",
+   "label": "Archive Number",
+   "read_only": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_archive",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "archive_location",
+   "fieldtype": "Link",
+   "label": "Archive Location",
+   "options": "Archive Location"
+  },
+  {
+   "fieldname": "archived_on",
+   "fieldtype": "Datetime",
+   "label": "Archived On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "archived_by",
+   "fieldtype": "Link",
+   "label": "Archived By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Outgoing Letter",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-12-09 15:01:28.949684",
+ "modified_by": "Administrator",
+ "module": "Correspondence",
+ "name": "Outgoing Letter",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Correspondence Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Correspondence User",
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "search_fields": "subject,recipient,letter_number",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "subject",
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
 }

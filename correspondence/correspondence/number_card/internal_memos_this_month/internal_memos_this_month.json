@@ -1,0 +1,22 @@
+{
+    "aggregate_function_based_on": "",
+    "creation": "2025-12-10 10:00:00.000000",
+    "docstatus": 0,
+    "doctype": "Number Card",
+    "document_type": "Internal Memo",
+    "dynamic_filters_json": "[]",
+    "filters_json": "[[\"Internal Memo\",\"creation\",\"Timespan\",\"This Month\"]]",
+    "function": "Count",
+    "idx": 0,
+    "is_public": 1,
+    "is_standard": 1,
+    "label": "Internal Memos This Month",
+    "modified": "2025-12-10 10:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Correspondence",
+    "name": "Internal Memos This Month",
+    "owner": "Administrator",
+    "show_percentage_stats": 1,
+    "stats_time_interval": "Monthly",
+    "type": "Document Type"
+}

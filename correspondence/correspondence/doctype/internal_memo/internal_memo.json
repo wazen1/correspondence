@@ -1,0 +1,173 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "autoname": "format:MEMO-{YYYY}-{#####}",
+    "creation": "2025-12-09 14:15:00.000000",
+    "default_view": "List",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "section_break_details",
+        "naming_series",
+        "reference_number",
+        "date",
+        "priority",
+        "column_break_1",
+        "status",
+        "sender",
+        "recipient_type",
+        "recipient_department",
+        "recipient_user",
+        "section_break_content",
+        "subject",
+        "content",
+        "section_break_actions",
+        "amended_from"
+    ],
+    "fields": [
+        {
+            "fieldname": "section_break_details",
+            "fieldtype": "Section Break",
+            "label": "Basic Details"
+        },
+        {
+            "fieldname": "naming_series",
+            "fieldtype": "Select",
+            "label": "Series",
+            "options": "MEMO-.YYYY.-.#####",
+            "hidden": 1
+        },
+        {
+            "fieldname": "reference_number",
+            "fieldtype": "Data",
+            "label": "Reference Number",
+            "read_only": 1,
+            "in_list_view": 1
+        },
+        {
+            "default": "Today",
+            "fieldname": "date",
+            "fieldtype": "Date",
+            "label": "Date",
+            "reqd": 1
+        },
+        {
+            "default": "Medium",
+            "fieldname": "priority",
+            "fieldtype": "Select",
+            "label": "Priority",
+            "options": "Low\nMedium\nHigh\nUrgent",
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": "Draft",
+            "fieldname": "status",
+            "fieldtype": "Select",
+            "label": "Status",
+            "options": "Draft\nSent\nReceived\nReplied\nArchived",
+            "in_list_view": 1,
+            "in_standard_filter": 1
+        },
+        {
+            "fieldname": "sender",
+            "fieldtype": "Link",
+            "label": "Sender",
+            "options": "User",
+            "reqd": 1,
+            "default": "user"
+        },
+        {
+            "default": "Department",
+            "fieldname": "recipient_type",
+            "fieldtype": "Select",
+            "label": "Recipient Type",
+            "options": "Department\nUser"
+        },
+        {
+            "depends_on": "eval:doc.recipient_type=='Department'",
+            "fieldname": "recipient_department",
+            "fieldtype": "Link",
+            "label": "Recipient Department",
+            "options": "Department"
+        },
+        {
+            "depends_on": "eval:doc.recipient_type=='User'",
+            "fieldname": "recipient_user",
+            "fieldtype": "Link",
+            "label": "Recipient User",
+            "options": "User"
+        },
+        {
+            "fieldname": "section_break_content",
+            "fieldtype": "Section Break",
+            "label": "Memo Content"
+        },
+        {
+            "fieldname": "subject",
+            "fieldtype": "Data",
+            "label": "Subject",
+            "reqd": 1,
+            "in_global_search": 1
+        },
+        {
+            "fieldname": "content",
+            "fieldtype": "Text Editor",
+            "label": "Content",
+            "reqd": 1
+        },
+        {
+            "fieldname": "section_break_actions",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "amended_from",
+            "fieldtype": "Link",
+            "label": "Amended From",
+            "no_copy": 1,
+            "options": "Internal Memo",
+            "read_only": 1
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "is_submittable": 1,
+    "links": [],
+    "modified": "2025-12-09 14:15:00.000000",
+    "modified_by": "Administrator",
+    "module": "Correspondence",
+    "name": "Internal Memo",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "submit": 1,
+            "write": 1
+        },
+        {
+            "create": 1,
+            "email": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "Employee",
+            "submit": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": [],
+    "track_changes": 1
+}

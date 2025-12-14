@@ -9,13 +9,15 @@ def notify_on_assignment(doc, method):
 		# Check if assignment changed
 		# In on_update, we check against the previous state
 		if doc.has_value_changed("assigned_to") or (not doc.get_doc_before_save() and doc.assigned_to):
-			subject = f"Assignment: {doc.name} - {doc.subject}"
+			subject = f"تعيين: {doc.name} - {doc.subject}"
 			message = f"""
-				<p>You have been assigned to the following Incoming Letter:</p>
-				<p><b>Letter Number:</b> {doc.name}</p>
-				<p><b>Subject:</b> {doc.subject}</p>
-				<p><b>Priority:</b> {doc.priority}</p>
-				<p><a href="{frappe.utils.get_url_to_form(doc.doctype, doc.name)}">View Letter</a></p>
+				<div style="direction: rtl; text-align: right; font-family: Tahoma, Arial, sans-serif;">
+					<p>تم تعيين الرسالة الواردة التالية لك:</p>
+					<p><b>رقم الرسالة:</b> {doc.name}</p>
+					<p><b>الموضوع:</b> {doc.subject}</p>
+					<p><b>الأولوية:</b> {doc.priority}</p>
+					<p><a href="{frappe.utils.get_url_to_form(doc.doctype, doc.name)}">عرض الرسالة</a></p>
+				</div>
 			"""
 			
 			# Send System Notification
@@ -33,7 +35,7 @@ def notify_on_status_change(doc, method):
 	Notify relevant users when status changes.
 	"""
 	if doc.has_value_changed("status"):
-		subject = f"Status Update: {doc.name} is now {doc.status}"
+		subject = f"تحديث الحالة: {doc.name} أصبحت {doc.status}"
 		
 		# Notify Owner
 		if doc.owner != frappe.session.user:
@@ -51,7 +53,7 @@ def check_daily_follow_ups():
 		doc = frappe.get_doc("Incoming Letter", letter.name)
 		for follow_up in doc.follow_ups:
 			if follow_up.status == "Pending" and follow_up.next_follow_up_date and getdate(follow_up.next_follow_up_date) <= today:
-				subject = f"Follow Up Due: {doc.name}"
+				subject = f"متابعة مستحقة: {doc.name}"
 				recipient = follow_up.followed_up_by or doc.assigned_to or doc.owner
 				
 				create_system_notification(doc, recipient, subject)
@@ -60,8 +62,12 @@ def check_daily_follow_ups():
 				if getdate(follow_up.next_follow_up_date) < today:
 					frappe.sendmail(
 						recipients=[recipient],
-						subject=f"OVERDUE: {subject}",
-						message=f"Follow up for letter {doc.name} was due on {follow_up.next_follow_up_date}."
+						subject=f"متأخر: {subject}",
+						message=f"""
+							<div style="direction: rtl; text-align: right; font-family: Tahoma, Arial, sans-serif;">
+								<p>المتابعة الخاصة بالرسالة {doc.name} كانت مستحقة في {follow_up.next_follow_up_date}.</p>
+							</div>
+						"""
 					)
 
 def create_system_notification(doc, recipient, subject):

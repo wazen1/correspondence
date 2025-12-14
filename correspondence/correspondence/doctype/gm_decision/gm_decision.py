@@ -30,27 +30,29 @@ class GMDecision(Document):
 		try:
 			# Create notification
 			notification = frappe.new_doc("Notification Log")
-			notification.subject = f"GM Decision Assigned: {self.subject}"
+			notification.subject = f"تكليف بقرار المدير العام: {self.subject}"
 			notification.for_user = self.responsible_person
 			notification.type = "Alert"
 			notification.document_type = self.doctype
 			notification.document_name = self.name
 			notification.email_content = f"""
-				<p>A new GM Decision has been assigned to you:</p>
-				<ul>
-					<li><strong>Subject:</strong> {self.subject}</li>
-					<li><strong>Decision Date:</strong> {self.decision_date}</li>
-					<li><strong>Priority:</strong> {self.priority}</li>
-					<li><strong>Deadline:</strong> {self.implementation_deadline or 'Not set'}</li>
-				</ul>
-				<p>Please review and implement accordingly.</p>
+				<div style="direction: rtl; text-align: right; font-family: Tahoma, Arial, sans-serif;">
+					<p>تم تكليفك بتنفيذ قرار المدير العام التالي:</p>
+					<ul>
+						<li><strong>الموضوع:</strong> {self.subject}</li>
+						<li><strong>تاريخ القرار:</strong> {self.decision_date}</li>
+						<li><strong>الأولوية:</strong> {self.priority}</li>
+						<li><strong>الموعد النهائي:</strong> {self.implementation_deadline or 'غير محدد'}</li>
+					</ul>
+					<p>الرجاء المراجعة والتنفيذ.</p>
+				</div>
 			"""
 			notification.insert(ignore_permissions=True)
 			
 			# Send email
 			frappe.sendmail(
 				recipients=[self.responsible_person],
-				subject=f"GM Decision Assigned: {self.subject}",
+				subject=f"تكليف بقرار المدير العام: {self.subject}",
 				message=notification.email_content,
 				reference_doctype=self.doctype,
 				reference_name=self.name

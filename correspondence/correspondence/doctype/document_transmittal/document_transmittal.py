@@ -28,17 +28,17 @@ class DocumentTransmittal(Document):
 		if not recipient_email:
 			return
 
-		subject = f"Document Transmittal: {self.name}"
+		subject = f"إحالة مستندات: {self.name}"
 		
 		# Build HTML table of items
 		items_html = """
-		<table class="table table-bordered" style="width: 100%; border-collapse: collapse;">
+		<table class="table table-bordered" style="width: 100%; border-collapse: collapse; direction: rtl; text-align: right;">
 			<thead>
 				<tr style="background-color: #f0f0f0;">
-					<th style="padding: 8px; border: 1px solid #ddd;">Document</th>
-					<th style="padding: 8px; border: 1px solid #ddd;">Revision</th>
-					<th style="padding: 8px; border: 1px solid #ddd;">Title</th>
-					<th style="padding: 8px; border: 1px solid #ddd;">Remarks</th>
+					<th style="padding: 8px; border: 1px solid #ddd;">المستند</th>
+					<th style="padding: 8px; border: 1px solid #ddd;">الإصدار</th>
+					<th style="padding: 8px; border: 1px solid #ddd;">العنوان</th>
+					<th style="padding: 8px; border: 1px solid #ddd;">ملاحظات</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -57,21 +57,25 @@ class DocumentTransmittal(Document):
 		items_html += "</tbody></table>"
 
 		message = f"""
-		<p>Dear {self.recipient},</p>
-		<p>Please find attached the following documents for <b>{self.reason_for_issue}</b>.</p>
-		<p><b>Transmittal No:</b> {self.name}<br>
-		<b>Date:</b> {self.transmittal_date}</p>
-		
-		{items_html}
-		
-		<p>{self.message or ''}</p>
+		<div style="direction: rtl; text-align: right; font-family: Tahoma, Arial, sans-serif;">
+			<p>عزيزي {self.recipient}،</p>
+			<p>تجدون مرفقاً المستندات التالية لغرض <b>{self.reason_for_issue}</b>.</p>
+			<p><b>رقم الإحالة:</b> {self.name}<br>
+			<b>التاريخ:</b> {self.transmittal_date}</p>
+			
+			{items_html}
+			
+			<p>{self.message or ''}</p>
 		"""
 
 		if self.acknowledgement_required:
 			message += f"""
-			<p><b>Please acknowledge receipt of this transmittal.</b></p>
-			<p><a href="{frappe.utils.get_url()}/app/document-transmittal/{self.name}" class="btn btn-primary">View & Acknowledge</a></p>
+			<p><b>الرجاء تأكيد استلام هذه الإحالة.</b></p>
+			<p><a href="{frappe.utils.get_url()}/app/document-transmittal/{self.name}" class="btn btn-primary">عرض وتأكيد الاستلام</a></p>
+			</div>
 			"""
+		else:
+			message += "</div>"
 
 		frappe.sendmail(
 			recipients=[recipient_email],
@@ -81,7 +85,7 @@ class DocumentTransmittal(Document):
 			reference_name=self.name
 		)
 		
-		frappe.msgprint(f"Transmittal sent to {recipient_email}")
+		frappe.msgprint(f"تم إرسال الإحالة إلى {recipient_email}")
 
 @frappe.whitelist()
 def acknowledge_transmittal(transmittal_name):

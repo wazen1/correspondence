@@ -173,3 +173,67 @@ def get_letter_preview(letter_name):
 		"related_documents": [rel.as_dict() for rel in letter.related_documents] if letter.related_documents else [],
 		"topics": [t.as_dict() for t in letter.topics] if letter.topics else []
 	}
+
+@frappe.whitelist()
+def generate_word_document(letter_name):
+	"""Generate a Word document from the outgoing letter"""
+	try:
+		doc = frappe.get_doc("Outgoing Letter", letter_name)
+		
+		# Create HTML content for the Word document
+		# We use a simple HTML structure that Word can open
+		html_content = f"""
+		<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+		<head>
+			<meta charset="utf-8">
+			<title>{doc.subject}</title>
+			<style>
+				body {{ font-family: 'Arial', sans-serif; direction: rtl; text-align: right; }}
+				.header {{ text-align: center; margin-bottom: 30px; }}
+				.meta {{ margin-bottom: 20px; }}
+				.content {{ line-height: 1.6; }}
+				.footer {{ margin-top: 50px; }}
+			</style>
+		</head>
+		<body>
+			<div class="header">
+				<h2>رسالة صادرة</h2>
+				<h3>Outgoing Letter</h3>
+			</div>
+			
+			<div class="meta">
+				<p><b>رقم الرسالة:</b> {doc.name}</p>
+				<p><b>التاريخ:</b> {doc.date_created}</p>
+				<p><b>إلى:</b> {doc.recipient}</p>
+				<p><b>المنظمة:</b> {doc.recipient_organization or ''}</p>
+				<p><b>القسم:</b> {doc.department or ''}</p>
+				<p><b>الموضوع:</b> {doc.subject}</p>
+				<p><b>الأولوية:</b> {doc.priority}</p>
+			</div>
+			
+			<hr>
+			
+			<div class="content">
+				{doc.body_text}
+			</div>
+			
+			<div class="footer">
+				<p><b>التوقيع:</b> ____________________</p>
+				<p><b>التاريخ:</b> ____________________</p>
+			</div>
+		</body>
+		</html>
+		"""
+		
+		# Encode to base64
+		import base64
+		b64_content = base64.b64encode(html_content.encode('utf-8')).decode('utf-8')
+		
+		return {
+			"filename": f"{doc.name}.doc",
+			"content": b64_content
+		}
+		
+	except Exception as e:
+		frappe.log_error(f"Word generation failed: {str(e)}")
+		return None

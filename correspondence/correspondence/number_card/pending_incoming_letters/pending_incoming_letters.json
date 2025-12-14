@@ -1,0 +1,22 @@
+{
+    "aggregate_function_based_on": "",
+    "color": "Red",
+    "creation": "2025-12-10 10:00:00.000000",
+    "docstatus": 0,
+    "doctype": "Number Card",
+    "document_type": "Incoming Letter",
+    "dynamic_filters_json": "[]",
+    "filters_json": "[[\"Incoming Letter\",\"status\",\"in\",[\"New\",\"Under Process\",\"Waiting\"]]]",
+    "function": "Count",
+    "idx": 0,
+    "is_public": 1,
+    "is_standard": 1,
+    "label": "Pending Incoming Letters",
+    "modified": "2025-12-10 10:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Correspondence",
+    "name": "Pending Incoming Letters",
+    "owner": "Administrator",
+    "show_percentage_stats": 0,
+    "type": "Document Type"
+}

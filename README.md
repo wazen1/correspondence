@@ -44,6 +44,12 @@ faiss-cpu>=1.7.4
 scikit-learn>=1.3.0
 numpy>=1.24.0
 python-magic>=0.4.27
+cryptography>=41.0.0
+qrcode>=7.4.2
+python-barcode>=0.15.1
+pandas>=2.0.0
+SpeechRecognition>=3.10.0
+pydub>=0.25.1
 ```
 
 ### Node Dependencies
@@ -416,19 +422,55 @@ For issues and questions:
 
 ## 🗺️ Roadmap
 
+### Completed in Version 1.0.1
+
+- [x] Digital signature support
+- [x] Barcode/QR code generation
+- [x] Advanced analytics with ML
+- [x] Voice-to-text for letter creation
+
 ### Planned Features
 
 - [ ] Email integration (auto-create letters from emails)
-- [ ] Digital signature support
-- [ ] Barcode/QR code generation
 - [ ] Mobile app
-- [ ] Advanced analytics with ML
 - [ ] Multi-language UI
 - [ ] Integration with external DMS systems
 - [ ] Automated workflow suggestions
-- [ ] Voice-to-text for letter creation
 
 ## 📝 Changelog
+
+### Version 1.0.1 (2025-12-02)
+
+**New Features**
+- ✅ Digital signature support with RSA encryption
+  - Generate user key pairs
+  - Sign documents digitally
+  - Verify document signatures
+  - Track signature history
+- ✅ Barcode/QR code generation
+  - Generate QR codes with document metadata
+  - Generate barcodes for document tracking
+  - Scan QR codes to retrieve documents
+  - Multiple barcode format support
+- ✅ Advanced analytics with ML
+  - Predict response times using machine learning
+  - Auto-classify priority levels
+  - Trend analysis and forecasting
+  - Bottleneck identification
+  - Intelligent insights generation
+- ✅ Voice-to-text for letter creation
+  - Convert audio recordings to text
+  - Create letters from voice recordings
+  - Multi-language support
+  - Automatic subject/body extraction
+
+**Dependencies Added**
+- cryptography>=41.0.0
+- qrcode>=7.4.2
+- python-barcode>=0.15.1
+- pandas>=2.0.0
+- SpeechRecognition>=3.10.0
+- pydub>=0.25.1
 
 ### Version 1.0.0 (2025-11-25)
 

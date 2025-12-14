@@ -62,7 +62,7 @@ class IncomingLetter(Document):
 	
 	def update_sla_status(self):
 		"""Update SLA status based on due date"""
-		if not self.due_date:
+		if not hasattr(self, 'due_date') or not self.due_date:
 			return
 		
 		today = get_datetime()
@@ -80,12 +80,13 @@ class IncomingLetter(Document):
 	def auto_assign_to_department(self):
 		"""Auto-assign to department head or default user"""
 		try:
-			# Get department head
-			dept = frappe.get_doc("Department", self.recipient_department)
-			if hasattr(dept, 'department_head') and dept.department_head:
-				self.assigned_to = dept.department_head
+			# Try to get department head using db.get_value (safer, doesn't require full doc permissions)
+			dept_head = frappe.db.get_value("Department", self.recipient_department, "department_head")
+			if dept_head:
+				self.assigned_to = dept_head
 		except Exception as e:
-			frappe.log_error(f"Auto-assignment failed: {str(e)}")
+			# Silently fail - department_head field might not exist or user doesn't have permission
+			pass
 	
 	def process_ocr_for_attachments(self):
 		"""Process OCR for all attachments that haven't been processed"""
@@ -175,28 +176,30 @@ class IncomingLetter(Document):
 		try:
 			# Create notification
 			notification = frappe.new_doc("Notification Log")
-			notification.subject = f"New Letter Assigned: {self.subject}"
+			notification.subject = f"تم تعيين رسالة جديدة: {self.subject}"
 			notification.for_user = self.assigned_to
 			notification.type = "Alert"
 			notification.document_type = self.doctype
 			notification.document_name = self.name
 			notification.email_content = f"""
-				<p>A new incoming letter has been assigned to you:</p>
-				<ul>
-					<li><strong>Letter Number:</strong> {self.letter_number}</li>
-					<li><strong>Sender:</strong> {self.sender}</li>
-					<li><strong>Subject:</strong> {self.subject}</li>
-					<li><strong>Priority:</strong> {self.priority}</li>
-					<li><strong>Due Date:</strong> {self.due_date or 'Not set'}</li>
-				</ul>
-				<p>Please review and take necessary action.</p>
+				<div style="direction: rtl; text-align: right; font-family: Tahoma, Arial, sans-serif;">
+					<p>تم تعيين رسالة واردة جديدة لك:</p>
+					<ul>
+						<li><strong>رقم الرسالة:</strong> {self.letter_number}</li>
+						<li><strong>المرسل:</strong> {self.sender}</li>
+						<li><strong>الموضوع:</strong> {self.subject}</li>
+						<li><strong>الأولوية:</strong> {self.priority}</li>
+						<li><strong>تاريخ الاستحقاق:</strong> {self.due_date or 'غير محدد'}</li>
+					</ul>
+					<p>الرجاء المراجعة واتخاذ الإجراء اللازم.</p>
+				</div>
 			"""
 			notification.insert(ignore_permissions=True)
 			
 			# Send email
 			frappe.sendmail(
 				recipients=[self.assigned_to],
-				subject=f"New Letter Assigned: {self.subject}",
+				subject=f"تم تعيين رسالة جديدة: {self.subject}",
 				message=notification.email_content,
 				reference_doctype=self.doctype,
 				reference_name=self.name
@@ -215,10 +218,12 @@ class IncomingLetter(Document):
 			try:
 				frappe.sendmail(
 					recipients=[self.assigned_to],
-					subject=f"Letter Status Updated: {self.subject}",
+					subject=f"تحديث حالة الرسالة: {self.subject}",
 					message=f"""
-						<p>The status of letter <strong>{self.letter_number}</strong> has been updated to <strong>{self.status}</strong>.</p>
-						<p><strong>Subject:</strong> {self.subject}</p>
+						<div style="direction: rtl; text-align: right; font-family: Tahoma, Arial, sans-serif;">
+							<p>تم تحديث حالة الرسالة <strong>{self.letter_number}</strong> إلى <strong>{self.status}</strong>.</p>
+							<p><strong>الموضوع:</strong> {self.subject}</p>
+						</div>
 					""",
 					reference_doctype=self.doctype,
 					reference_name=self.name
